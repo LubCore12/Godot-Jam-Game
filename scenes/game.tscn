@@ -1,0 +1,690 @@
+[gd_scene format=3 uid="uid://c36sq4sha4m76"]
+
+[ext_resource type="Script" uid="uid://dnewikq5xvamp" path="res://scenes/scripts/game.gd" id="1_lnu2h"]
+[ext_resource type="FontFile" uid="uid://d2cvwye4u0u56" path="res://fonts/alagard.ttf" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://c8hcj2nadsei0" path="res://scenes/scripts/start_button.gd" id="4_lbhrr"]
+[ext_resource type="Theme" uid="uid://ira1ghvu3hho" path="res://themes/basic_panel.tres" id="5_gee14"]
+[ext_resource type="FontFile" uid="uid://cwisd6dpf2uhm" path="res://fonts/Undead Pixel 8.ttf" id="5_iywne"]
+[ext_resource type="Script" uid="uid://db4gn6gcrgyix" path="res://scenes/scripts/settings.gd" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://btt8xf34hhjjy" path="res://scenes/choice_button.tscn" id="7_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://dflnjmi0vkd5c" path="res://scenes/settings.tscn" id="7_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://do0aff82tjfug" path="res://icon.svg" id="7_vtaks"]
+[ext_resource type="Theme" uid="uid://ch44bfunu2qoe" path="res://themes/dark_panel.tres" id="8_0tnpc"]
+
+[sub_resource type="Theme" id="Theme_balt5"]
+default_font = ExtResource("1_yqjtg")
+Label/fonts/font = ExtResource("1_yqjtg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo3dt"]
+bg_color = Color(0.1262446, 0.18076703, 0.22437805, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.20160595, 0.31538844, 0.35210156, 1)
+
+[sub_resource type="Theme" id="Theme_37okk"]
+Panel/styles/panel = SubResource("StyleBoxFlat_fo3dt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
+bg_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
+bg_color = Color(0.67624867, 0.28832424, 0.28729868, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_iywne"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_p57ef")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_u5sy4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
+bg_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dinhu"]
+bg_color = Color(0.45, 0.3609, 0.288, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_kvuet"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_vtaks")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_dinhu")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
+bg_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca42v"]
+bg_color = Color(0.45800993, 0.3843, 0.63, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_rysoc"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ir15t")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_ca42v")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_264po"]
+bg_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kice"]
+bg_color = Color(0.25336993, 0.2605303, 0.26267585, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_5newe"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_264po")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1kice")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5newe"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvuet"]
+
+[sub_resource type="Theme" id="Theme_0tnpc"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("5_iywne")
+Button/styles/focus = SubResource("StyleBoxFlat_gee14")
+Button/styles/hover = SubResource("StyleBoxFlat_0tnpc")
+Button/styles/normal = SubResource("StyleBoxFlat_5newe")
+Button/styles/pressed = SubResource("StyleBoxFlat_kvuet")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
+bg_color = Color(0.638588, 0.73231137, 0.76382935, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssvqc"]
+bg_color = Color(0.49128562, 0.6209408, 0.69346863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
+bg_color = Color(0.3843775, 0.48037082, 0.5119803, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rysoc"]
+draw_center = false
+border_width_top = 8
+border_color = Color(0.1271773, 0.18891162, 0.21013868, 1)
+
+[sub_resource type="Theme" id="Theme_vtaks"]
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_kvpfn")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ssvqc")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_trtic")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_rysoc")
+
+[node name="Game" type="Node2D" unique_id=1065888404]
+script = ExtResource("1_lnu2h")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1113279188]
+anchor_mode = 0
+
+[node name="Locations" type="Control" parent="." unique_id=418492786]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartMenu" type="Control" parent="Locations" unique_id=773972461]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="ColorRect" parent="Locations/StartMenu" unique_id=1757384780]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18692097, 0.18692097, 0.18692094, 1)
+
+[node name="Label" type="Label" parent="Locations/StartMenu" unique_id=1563199399]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.25
+offset_left = -48.0
+offset_top = -11.5
+offset_right = 48.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_balt5")
+theme_override_font_sizes/font_size = 160
+text = "Game Name"
+
+[node name="StartButton" type="Button" parent="Locations/StartMenu" unique_id=1337451961]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.55
+anchor_right = 0.665
+anchor_bottom = 0.65
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+script = ExtResource("4_lbhrr")
+
+[node name="GameWindow" type="Control" parent="Locations" unique_id=761410780]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_left = 1920.0
+offset_right = 3840.0
+offset_bottom = 1080.0
+
+[node name="BG" type="Panel" parent="Locations/GameWindow" unique_id=30621984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_37okk")
+
+[node name="StateStats" type="HBoxContainer" parent="Locations/GameWindow" unique_id=2016750417]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.16
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+
+[node name="HealthStat" type="Control" parent="Locations/GameWindow/StateStats" unique_id=2088443988]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="Panel" parent="Locations/GameWindow/StateStats/HealthStat" unique_id=30401318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_gee14")
+
+[node name="StatLabel" type="Label" parent="Locations/GameWindow/StateStats/HealthStat" unique_id=1660874210]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.34
+anchor_right = 0.5
+anchor_bottom = 0.34
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 60
+text = "HEALTH"
+
+[node name="ProgressBar" type="ProgressBar" parent="Locations/GameWindow/StateStats/HealthStat" unique_id=271953078]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.6
+anchor_right = 0.97
+anchor_bottom = 0.97
+offset_left = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_iywne")
+theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+value = 90.0
+
+[node name="FoodStat" type="Control" parent="Locations/GameWindow/StateStats" unique_id=1775376640]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="Panel" parent="Locations/GameWindow/StateStats/FoodStat" unique_id=1655985116]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_gee14")
+
+[node name="StatLabel" type="Label" parent="Locations/GameWindow/StateStats/FoodStat" unique_id=1417935167]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.34
+anchor_right = 0.5
+anchor_bottom = 0.34
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 60
+text = "FOOD"
+
+[node name="ProgressBar" type="ProgressBar" parent="Locations/GameWindow/StateStats/FoodStat" unique_id=1421142942]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.6
+anchor_right = 0.97
+anchor_bottom = 0.97
+offset_left = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_kvuet")
+theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+value = 90.0
+
+[node name="SanityStat" type="Control" parent="Locations/GameWindow/StateStats" unique_id=858013659]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="Panel" parent="Locations/GameWindow/StateStats/SanityStat" unique_id=1702884667]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_gee14")
+
+[node name="StatLabel" type="Label" parent="Locations/GameWindow/StateStats/SanityStat" unique_id=1816463920]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.34
+anchor_right = 0.5
+anchor_bottom = 0.34
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 60
+text = "SANITY"
+
+[node name="ProgressBar" type="ProgressBar" parent="Locations/GameWindow/StateStats/SanityStat" unique_id=1751768386]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.6
+anchor_right = 0.97
+anchor_bottom = 0.97
+offset_left = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_rysoc")
+theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+value = 90.0
+
+[node name="AlternessStat" type="Control" parent="Locations/GameWindow/StateStats" unique_id=2093332700]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="Panel" parent="Locations/GameWindow/StateStats/AlternessStat" unique_id=1045791207]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_gee14")
+
+[node name="StatLabel" type="Label" parent="Locations/GameWindow/StateStats/AlternessStat" unique_id=2122243048]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.34
+anchor_right = 0.5
+anchor_bottom = 0.34
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 60
+text = "ALTERNESS"
+
+[node name="ProgressBar" type="ProgressBar" parent="Locations/GameWindow/StateStats/AlternessStat" unique_id=996800045]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.6
+anchor_right = 0.97
+anchor_bottom = 0.97
+offset_left = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_5newe")
+theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+value = 90.0
+
+[node name="ChoiceMenu" type="GridContainer" parent="Locations/GameWindow" unique_id=867427063]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26
+anchor_top = 0.16
+anchor_right = 1.0
+anchor_bottom = 0.9
+offset_left = -4.0
+offset_top = 4.0
+offset_right = -32.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="ChoiceButton" parent="Locations/GameWindow/ChoiceMenu" unique_id=500040248 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(700, 250)
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="ChoiceButton2" parent="Locations/GameWindow/ChoiceMenu" unique_id=928214690 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(700, 250)
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ChoiceButton3" parent="Locations/GameWindow/ChoiceMenu" unique_id=1118811279 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(700, 250)
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ChoiceButton4" parent="Locations/GameWindow/ChoiceMenu" unique_id=1139989607 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(700, 250)
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="ChoiceButton5" parent="Locations/GameWindow/ChoiceMenu" unique_id=725074781 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(700, 250)
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="ChoiceButton6" parent="Locations/GameWindow/ChoiceMenu" unique_id=1237803507 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(700, 250)
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="DownMenu" type="HBoxContainer" parent="Locations/GameWindow" unique_id=481382500]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 12
+
+[node name="Inventory" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=587325271]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_0tnpc")
+text = "INVENTORY"
+
+[node name="People" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=395663350]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_0tnpc")
+text = "PEOPLE"
+
+[node name="Globals" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=1232909284]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_0tnpc")
+text = "GLOBALS"
+
+[node name="Settings" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=437061937]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_0tnpc")
+text = "SETTINGS"
+script = ExtResource("6_p57ef")
+
+[node name="InfoSidePanel" type="Panel" parent="Locations/GameWindow" unique_id=797802498]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.16
+anchor_right = 0.25
+anchor_bottom = 0.43
+offset_left = 20.0
+offset_top = 20.0
+offset_bottom = -12.0
+grow_vertical = 2
+theme = ExtResource("5_gee14")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Locations/GameWindow/InfoSidePanel" unique_id=55877309]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="DayPanel" type="Panel" parent="Locations/GameWindow/InfoSidePanel/VBoxContainer" unique_id=1656116828]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_0tnpc")
+
+[node name="Day" type="Label" parent="Locations/GameWindow/InfoSidePanel/VBoxContainer/DayPanel" unique_id=876726867]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -20.0
+offset_right = 110.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 40
+text = "Day: 12/30"
+
+[node name="DangerPanel" type="Panel" parent="Locations/GameWindow/InfoSidePanel/VBoxContainer" unique_id=884666954]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_0tnpc")
+
+[node name="Danger" type="Label" parent="Locations/GameWindow/InfoSidePanel/VBoxContainer/DangerPanel" unique_id=679576663]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -20.0
+offset_right = 110.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 40
+text = "Danger: High"
+
+[node name="ActionInfoPanel" type="Panel" parent="Locations/GameWindow" unique_id=1492435465]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.43
+anchor_right = 0.25
+anchor_bottom = 0.65
+offset_left = 20.0
+offset_top = 12.0
+offset_bottom = -12.0
+grow_vertical = 2
+theme = ExtResource("5_gee14")
+
+[node name="Info" type="Label" parent="Locations/GameWindow/ActionInfoPanel" unique_id=2046492457]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 30
+text = "You are sitting in the storage room. Footsteps can be heard in the corridor."
+autowrap_mode = 2
+
+[node name="Inventory" type="Panel" parent="Locations/GameWindow" unique_id=1909933386]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.65
+anchor_right = 0.25
+anchor_bottom = 0.9
+offset_left = 20.0
+offset_top = 12.0
+offset_bottom = -20.0
+grow_vertical = 2
+theme = ExtResource("5_gee14")
+
+[node name="InventoryLabel" type="Label" parent="Locations/GameWindow/Inventory" unique_id=398064470]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = -0.5
+offset_top = 25.0
+offset_right = 0.5
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 30
+text = "Inventory"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Locations/GameWindow/Inventory" unique_id=806592172]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.3
+anchor_right = 0.9
+anchor_bottom = 1.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vtaks")
+
+[node name="GridContainer" type="HBoxContainer" parent="Locations/GameWindow/Inventory/ScrollContainer" unique_id=1092723714]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="Locations/GameWindow/Inventory/ScrollContainer/GridContainer" unique_id=2139995615]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_vtaks")
+
+[node name="TextureRect2" type="TextureRect" parent="Locations/GameWindow/Inventory/ScrollContainer/GridContainer" unique_id=1870431661]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_vtaks")
+
+[node name="TextureRect3" type="TextureRect" parent="Locations/GameWindow/Inventory/ScrollContainer/GridContainer" unique_id=171888276]
+custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_vtaks")
+
+[node name="Settings" parent="Locations/GameWindow" unique_id=353667311 instance=ExtResource("7_u5sy4")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Locations/StartMenu/StartButton" to="Locations/StartMenu/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="Locations/GameWindow/DownMenu/Settings" to="Locations/GameWindow/DownMenu/Settings" method="_on_pressed"]

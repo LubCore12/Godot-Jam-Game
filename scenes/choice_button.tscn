@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://btt8xf34hhjjy"]
+
+[ext_resource type="Texture2D" uid="uid://do0aff82tjfug" path="res://icon.svg" id="1_u2sgh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ioyl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k76xk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eifbw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkqxx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_0i16n"]
+Button/styles/focus = SubResource("StyleBoxFlat_1ioyl")
+Button/styles/hover = SubResource("StyleBoxFlat_k76xk")
+Button/styles/normal = SubResource("StyleBoxFlat_eifbw")
+Button/styles/pressed = SubResource("StyleBoxFlat_lkqxx")
+
+[node name="ChoiceButton" type="Button" unique_id=928214690]
+anchors_preset = -1
+anchor_right = 0.3
+anchor_bottom = 0.2
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0i16n")
+
+[node name="Info" type="Control" parent="." unique_id=1923356641]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG1" type="ColorRect" parent="Info" unique_id=1650329421]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_bottom = -10.0
+color = Color(0.17587718, 0.28231302, 0.2959346, 1)
+
+[node name="BG2" type="ColorRect" parent="Info" unique_id=1149064833]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 15.0
+offset_right = -5.0
+offset_bottom = -15.0
+color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[node name="Panel" type="ColorRect" parent="Info" unique_id=1073185601]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 20.0
+offset_right = -10.0
+offset_bottom = -20.0
+color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+
+[node name="Icon" type="Control" parent="." unique_id=1629275718]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG1" type="ColorRect" parent="Icon" unique_id=1704883616]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.375
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1764706, 0.28235295, 0.29411766, 1)
+
+[node name="BG2" type="ColorRect" parent="Icon" unique_id=1042825496]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.375
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[node name="BG3" type="ColorRect" parent="Icon" unique_id=1743926560]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.375
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+color = Color(0.36544633, 0.37418625, 0.35681435, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Icon" unique_id=126690479]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.375
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_u2sgh")
