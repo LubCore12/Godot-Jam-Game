@@ -17,7 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-global="*uid://bcags4r3456dl"
+GameState="*uid://bcags4r3456dl"
+CardManager="*uid://dgk5eln0ruq5s"
+Colors="*uid://gwoa1tueq3x0"
+CardDatabase="*uid://cwjbq5u460wpe"
 
 [display]
 

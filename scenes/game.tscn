@@ -5,8 +5,10 @@
 [ext_resource type="Script" uid="uid://c8hcj2nadsei0" path="res://scenes/scripts/start_button.gd" id="4_lbhrr"]
 [ext_resource type="Theme" uid="uid://ira1ghvu3hho" path="res://themes/basic_panel.tres" id="5_gee14"]
 [ext_resource type="FontFile" uid="uid://cwisd6dpf2uhm" path="res://fonts/Undead Pixel 8.ttf" id="5_iywne"]
-[ext_resource type="Script" uid="uid://db4gn6gcrgyix" path="res://scenes/scripts/settings.gd" id="6_p57ef"]
-[ext_resource type="PackedScene" uid="uid://btt8xf34hhjjy" path="res://scenes/choice_button.tscn" id="7_0tnpc"]
+[ext_resource type="Script" uid="uid://i110vgrawr1t" path="res://scenes/scripts/cards.gd" id="6_dinhu"]
+[ext_resource type="Script" uid="uid://db4gn6gcrgyix" path="res://scenes/scripts/settings_button.gd" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://btt8xf34hhjjy" path="res://scenes/card.tscn" id="7_0tnpc"]
+[ext_resource type="Script" uid="uid://cm5mrd52oipp6" path="res://scenes/scripts/down_menu.gd" id="7_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://dflnjmi0vkd5c" path="res://scenes/settings.tscn" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://do0aff82tjfug" path="res://icon.svg" id="7_vtaks"]
 [ext_resource type="Theme" uid="uid://ch44bfunu2qoe" path="res://themes/dark_panel.tres" id="8_0tnpc"]
@@ -102,9 +104,61 @@ border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_264po")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_1kice")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suyxu"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgl2t"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljb1"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_v2yb1"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("5_iywne")
+Button/styles/focus = SubResource("StyleBoxFlat_suyxu")
+Button/styles/hover = SubResource("StyleBoxFlat_sgl2t")
+Button/styles/normal = SubResource("StyleBoxFlat_qouja")
+Button/styles/pressed = SubResource("StyleBoxFlat_wljb1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvuet"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5newe"]
 bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
@@ -114,17 +168,103 @@ border_width_right = 8
 border_width_bottom = 8
 border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvuet"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37s47"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
 
-[sub_resource type="Theme" id="Theme_0tnpc"]
+[sub_resource type="Theme" id="Theme_bt5mj"]
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("5_iywne")
-Button/styles/focus = SubResource("StyleBoxFlat_gee14")
-Button/styles/hover = SubResource("StyleBoxFlat_0tnpc")
+Button/styles/focus = SubResource("StyleBoxFlat_kvpfn")
+Button/styles/hover = SubResource("StyleBoxFlat_kvuet")
 Button/styles/normal = SubResource("StyleBoxFlat_5newe")
-Button/styles/pressed = SubResource("StyleBoxFlat_kvuet")
+Button/styles/pressed = SubResource("StyleBoxFlat_37s47")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1j6l"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pl11u"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhx41"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnb83"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_sww3w"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("5_iywne")
+Button/styles/focus = SubResource("StyleBoxFlat_e1j6l")
+Button/styles/hover = SubResource("StyleBoxFlat_pl11u")
+Button/styles/normal = SubResource("StyleBoxFlat_bhx41")
+Button/styles/pressed = SubResource("StyleBoxFlat_qnb83")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0lu"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxtfn"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02fa5"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_nepv3"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("5_iywne")
+Button/styles/focus = SubResource("StyleBoxFlat_js0lu")
+Button/styles/hover = SubResource("StyleBoxFlat_gxtfn")
+Button/styles/normal = SubResource("StyleBoxFlat_twgab")
+Button/styles/pressed = SubResource("StyleBoxFlat_02fa5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt5mj"]
 bg_color = Color(0.638588, 0.73231137, 0.76382935, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssvqc"]
@@ -139,7 +279,7 @@ border_width_top = 8
 border_color = Color(0.1271773, 0.18891162, 0.21013868, 1)
 
 [sub_resource type="Theme" id="Theme_vtaks"]
-HScrollBar/styles/grabber = SubResource("StyleBoxFlat_kvpfn")
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_bt5mj")
 HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ssvqc")
 HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_trtic")
 HScrollBar/styles/scroll = SubResource("StyleBoxFlat_rysoc")
@@ -403,7 +543,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 theme_override_fonts/font = ExtResource("5_iywne")
 theme_override_font_sizes/font_size = 60
-text = "ALTERNESS"
+text = "ALERTNESS"
 
 [node name="ProgressBar" type="ProgressBar" parent="Locations/GameWindow/StateStats/AlternessStat" unique_id=996800045]
 layout_mode = 1
@@ -421,59 +561,86 @@ theme = SubResource("Theme_5newe")
 theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
 value = 90.0
 
-[node name="ChoiceMenu" type="GridContainer" parent="Locations/GameWindow" unique_id=867427063]
+[node name="Cards" type="Control" parent="Locations/GameWindow" unique_id=799336949]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_dinhu")
+
+[node name="ConfirmPanel" type="HBoxContainer" parent="Locations/GameWindow/Cards" unique_id=1231077478]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.26
-anchor_top = 0.16
-anchor_right = 1.0
+anchor_left = 0.25
+anchor_top = 0.77
+anchor_right = 0.75
 anchor_bottom = 0.9
-offset_left = -4.0
-offset_top = 4.0
-offset_right = -32.0
-offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="Locations/GameWindow/Cards/ConfirmPanel" unique_id=687786255]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ConfirmButton" type="Button" parent="Locations/GameWindow/Cards/ConfirmPanel" unique_id=769013947]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_v2yb1")
+text = "CONFIRM"
+
+[node name="ChoiceMenu" type="GridContainer" parent="Locations/GameWindow/Cards" unique_id=867427063]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.18
+anchor_right = 0.85
+anchor_bottom = 0.75
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="ChoiceButton" parent="Locations/GameWindow/ChoiceMenu" unique_id=500040248 instance=ExtResource("7_0tnpc")]
-custom_minimum_size = Vector2(700, 250)
+[node name="ChoiceButton" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=500040248 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(570, 210)
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+mouse_behavior_recursive = 2
+
+[node name="ChoiceButton2" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=928214690 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(570, 210)
 propagate_maximum_size = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="ChoiceButton2" parent="Locations/GameWindow/ChoiceMenu" unique_id=928214690 instance=ExtResource("7_0tnpc")]
-custom_minimum_size = Vector2(700, 250)
-propagate_maximum_size = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="ChoiceButton3" parent="Locations/GameWindow/ChoiceMenu" unique_id=1118811279 instance=ExtResource("7_0tnpc")]
-custom_minimum_size = Vector2(700, 250)
-propagate_maximum_size = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="ChoiceButton4" parent="Locations/GameWindow/ChoiceMenu" unique_id=1139989607 instance=ExtResource("7_0tnpc")]
-custom_minimum_size = Vector2(700, 250)
+[node name="ChoiceButton3" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=1236537601 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(570, 210)
 propagate_maximum_size = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="ChoiceButton5" parent="Locations/GameWindow/ChoiceMenu" unique_id=725074781 instance=ExtResource("7_0tnpc")]
-custom_minimum_size = Vector2(700, 250)
+[node name="ChoiceButton4" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=1321643466 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(570, 210)
 propagate_maximum_size = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="ChoiceButton6" parent="Locations/GameWindow/ChoiceMenu" unique_id=1237803507 instance=ExtResource("7_0tnpc")]
-custom_minimum_size = Vector2(700, 250)
+[node name="ChoiceButton5" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=1996661042 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(570, 210)
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="ChoiceButton6" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=584236680 instance=ExtResource("7_0tnpc")]
+custom_minimum_size = Vector2(570, 210)
 propagate_maximum_size = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -491,29 +658,50 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 12
+script = ExtResource("7_kvpfn")
 
 [node name="Inventory" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=587325271]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_0tnpc")
+theme = SubResource("Theme_bt5mj")
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 text = "INVENTORY"
 
-[node name="People" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=395663350]
+[node name="People" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=77207652]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_0tnpc")
+theme = SubResource("Theme_sww3w")
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 text = "PEOPLE"
 
-[node name="Globals" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=1232909284]
+[node name="Globals" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=232937484]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_0tnpc")
+theme = SubResource("Theme_v2yb1")
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 text = "GLOBALS"
 
-[node name="Settings" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=437061937]
+[node name="Settings" type="Button" parent="Locations/GameWindow/DownMenu" unique_id=291804089]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_0tnpc")
+theme = SubResource("Theme_nepv3")
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_focus_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_pressed_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_hover_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 text = "SETTINGS"
 script = ExtResource("6_p57ef")
 
@@ -560,6 +748,7 @@ offset_right = 110.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 theme_override_fonts/font = ExtResource("5_iywne")
 theme_override_font_sizes/font_size = 40
 text = "Day: 12/30"
@@ -582,6 +771,7 @@ offset_right = 110.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 theme_override_fonts/font = ExtResource("5_iywne")
 theme_override_font_sizes/font_size = 40
 text = "Danger: High"
@@ -608,6 +798,7 @@ offset_top = 20.0
 offset_right = -20.0
 offset_bottom = -20.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 theme_override_fonts/font = ExtResource("5_iywne")
 theme_override_font_sizes/font_size = 30
 text = "You are sitting in the storage room. Footsteps can be heard in the corridor."
@@ -634,6 +825,7 @@ offset_top = 25.0
 offset_right = 0.5
 offset_bottom = 31.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 theme_override_fonts/font = ExtResource("5_iywne")
 theme_override_font_sizes/font_size = 30
 text = "Inventory"

@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dflnjmi0vkd5c"]
 
+[ext_resource type="FontFile" uid="uid://cwisd6dpf2uhm" path="res://fonts/Undead Pixel 8.ttf" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://cu4frl4wm81r1" path="res://scenes/scripts/settings.gd" id="1_6wm04"]
+[ext_resource type="Script" uid="uid://dssj6w70h6wgg" path="res://scenes/scripts/settings_buttons.gd" id="2_r6d6q"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
-bg_color = Color(0.17925203, 0.17925206, 0.17925194, 1)
+bg_color = Color(0.17074072, 0.23865023, 0.2920367, 1)
 
 [sub_resource type="Theme" id="Theme_p57ef"]
 Panel/styles/panel = SubResource("StyleBoxFlat_u5sy4")
@@ -25,19 +29,15 @@ content_margin_left = 1222.0
 content_margin_top = 736.0
 content_margin_right = 431.0
 content_margin_bottom = 506.0
-bg_color = Color(0.7324663, 0.57766247, 0.13888451, 1)
+bg_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p8wc"]
-content_margin_left = 297.0
-content_margin_top = 136.0
-content_margin_right = 471.0
-content_margin_bottom = 129.0
-bg_color = Color(0.24190602, 0.6140314, 0.9792288, 1)
+bg_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_es4n0"]
 content_margin_left = 783.0
 content_margin_top = 19.0
-bg_color = Color(0.9301817, 0.33218798, 0.7321428, 1)
+bg_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 
 [sub_resource type="Theme" id="Theme_f4mfi"]
 HSlider/icons/grabber = SubResource("GradientTexture2D_36l1p")
@@ -46,6 +46,46 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_36l1p")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_5p8wc")
 HSlider/styles/slider = SubResource("StyleBoxFlat_es4n0")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1j6l"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pl11u"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhx41"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnb83"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_5p8wc"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_5p8wc")
+Button/styles/focus = SubResource("StyleBoxFlat_e1j6l")
+Button/styles/hover = SubResource("StyleBoxFlat_pl11u")
+Button/styles/normal = SubResource("StyleBoxFlat_bhx41")
+Button/styles/pressed = SubResource("StyleBoxFlat_qnb83")
+
 [node name="Settings" type="Control" unique_id=353667311]
 layout_mode = 3
 anchors_preset = 15
@@ -53,6 +93,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6wm04")
 
 [node name="Panel" type="Panel" parent="." unique_id=1888673648]
 layout_mode = 1
@@ -76,8 +117,77 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 70
 
-[node name="HSlider" type="HSlider" parent="SoundSettingsContainer" unique_id=1340470571]
+[node name="MusicSound" type="VBoxContainer" parent="SoundSettingsContainer" unique_id=1758093874]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="SoundSettingsContainer/MusicSound" unique_id=1974160654]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5p8wc")
+theme_override_font_sizes/font_size = 60
+text = "MUSIC:"
+
+[node name="MusicSlider" type="HSlider" parent="SoundSettingsContainer/MusicSound" unique_id=1340470571]
 layout_mode = 2
 theme = SubResource("Theme_f4mfi")
 step = 5.0
+value = 100.0
+
+[node name="SFXSound" type="VBoxContainer" parent="SoundSettingsContainer" unique_id=479820499]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="SoundSettingsContainer/SFXSound" unique_id=1559382284]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5p8wc")
+theme_override_font_sizes/font_size = 60
+text = "SFX:"
+
+[node name="SFXSlider" type="HSlider" parent="SoundSettingsContainer/SFXSound" unique_id=389247607]
+layout_mode = 2
+theme = SubResource("Theme_f4mfi")
+step = 5.0
+value = 100.0
+
+[node name="SettingsButtons" type="HBoxContainer" parent="." unique_id=544263252]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.7
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+script = ExtResource("2_r6d6q")
+
+[node name="Exit" type="Button" parent="SettingsButtons" unique_id=745547772]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_5p8wc")
+theme_override_font_sizes/font_size = 40
+text = "EXIT"
+
+[node name="Save" type="Button" parent="SettingsButtons" unique_id=1062090963]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_5p8wc")
+theme_override_font_sizes/font_size = 40
+text = "SAVE"
+
+[node name="SaveExit" type="Button" parent="SettingsButtons" unique_id=612653939]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_5p8wc")
+theme_override_font_sizes/font_size = 40
+text = "SAVE & EXIT"
+
+[connection signal="drag_ended" from="SoundSettingsContainer/MusicSound/MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="value_changed" from="SoundSettingsContainer/MusicSound/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="SoundSettingsContainer/SFXSound/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="value_changed" from="SoundSettingsContainer/SFXSound/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="SettingsButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="SettingsButtons/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="SettingsButtons/SaveExit" to="." method="_on_save_exit_pressed"]
