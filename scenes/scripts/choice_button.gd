@@ -14,7 +14,7 @@ func _on_mouse_entered() -> void:
 	animate_bg(Color.WHITE, Color.WHITE)
 
 func _on_mouse_exited() -> void:
-	pass # Replace with function body.
+	animate_bg(Colors.dark_card_bg, Colors.dark_card_bg)
 
 func animate_bg(info_color, icon_color) -> void:
 	info_bg.color = info_color
@@ -28,7 +28,6 @@ func setup(id: String, data: Dictionary) -> void:
 	if data.has("icon"):
 		card_icon.texture = load(data["icon"])
 	
-	# Подсветка редкости
 	match data.get("rarity", "common"):
 		"common":
 			self_modulate = Color.WHITE
@@ -41,10 +40,8 @@ func setup(id: String, data: Dictionary) -> void:
 
 func set_selected(value: bool) -> void:
 	if value:
-		scale = Vector2(1.08, 1.08)
 		modulate = Color(1.2, 1.2, 1.0)
 	else:
-		scale = Vector2.ONE
 		modulate = Color.WHITE
 
 func _on_pressed() -> void:

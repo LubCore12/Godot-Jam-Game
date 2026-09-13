@@ -7,12 +7,11 @@ var card_scene = preload("res://scenes/card.tscn")
 var card_nodes: Dictionary = {}
 
 func _ready() -> void:
-	CardManager.cards_offered.connect(_on_cards_offered)
-	CardManager.selection_changed.connect(_on_selection_changed)
-	confirm_btn.pressed.connect(_on_confirm_pressed)
+	CardManager.cards_offered.connect(on_cards_offered)
+	CardManager.selection_changed.connect(on_selection_changed)
 	confirm_btn.disabled = true
 
-func _on_cards_offered(ids: Array[String]) -> void:
+func on_cards_offered(ids: Array[String]) -> void:
 	for child in container.get_children():
 		child.queue_free()
 	card_nodes.clear()
@@ -22,19 +21,18 @@ func _on_cards_offered(ids: Array[String]) -> void:
 		var inst = card_scene.instantiate()
 		container.add_child(inst)
 		inst.setup(id, data)
-		inst.card_clicked.connect(_on_card_clicked)
+		inst.card_clicked.connect(on_card_clicked)
 		card_nodes[id] = inst
-		inst.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		inst.size_flags_horizontal = Control.SIZE_EXPAND_FILL 
 		inst.size_flags_vertical = Control.SIZE_EXPAND_FILL
 
-func _on_card_clicked(card_id: String) -> void:
-	CardManager.toggle_card(card_id)
+func on_card_clicked(card: String) -> void:
+	CardManager.toggle_card(card)
 
-func _on_selection_changed(selected: Array[String]) -> void:
-	for id in card_nodes:
-		card_nodes[id].set_selected(id in selected)
-	
-	confirm_btn.disabled = not CardManager.can_confirm()
+func on_selection_changed(selected: String) -> void:
+	for card in card_nodes:
+		card_nodes[card].set_selected(card == selected)
+	confirm_btn.disabled = selected == ""
 
-func _on_confirm_pressed() -> void:
+func _on_confirm_button_pressed() -> void:
 	CardManager.confirm_selection()

@@ -1,39 +1,32 @@
 extends Node
 
-signal cards_offered(card_ids: Array[String])
-signal selection_changed(selected_ids: Array[String])
-signal selection_confirmed(selected_ids: Array[String])
+signal cards_offered(cards: Array[String])
+signal selection_changed(selected_card: String)
+signal selection_confirmed(selected_card: String)
 
-var offered_ids: Array[String] = []
-var selected_ids: Array[String] = []
-
-const MAX_SELECT := 3
+var offered_cards: Array[String] = []
+var selected_card: String
 
 func offer_cards(count: int = 6) -> void:
-	offered_ids.clear()
-	selected_ids.clear()
+	offered_cards.clear()
+	selected_card = ""
 	
-	var pool = CardDatabase.get_all_ids()
+	var pool = CardDatabase.get_all_cards()
 	pool.shuffle()
 	
 	for i in range(mini(count, pool.size())):
-		offered_ids.append(pool[i])
+		offered_cards.append(pool[i])
 	
-	cards_offered.emit(offered_ids)
-	selection_changed.emit(selected_ids)
+	cards_offered.emit(offered_cards)
+	selection_changed.emit(selected_card)
 
-func toggle_card(card_id: String) -> void:
-	if card_id in selected_ids:
-		selected_ids.erase(card_id)
+func toggle_card(card: String) -> void:
+	if card == selected_card:
+		selected_card = ""
 	else:
-		if selected_ids.size() < MAX_SELECT:
-			selected_ids.append(card_id)
+		selected_card = card
 	
-	selection_changed.emit(selected_ids)
-
-func can_confirm() -> bool:
-	return selected_ids.size() == MAX_SELECT
+	selection_changed.emit(selected_card)
 
 func confirm_selection() -> void:
-	if can_confirm():
-		selection_confirmed.emit(selected_ids)
+	selection_confirmed.emit(selected_card)

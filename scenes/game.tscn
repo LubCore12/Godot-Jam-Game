@@ -575,10 +575,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25
 anchor_top = 0.77
-anchor_right = 0.75
+anchor_right = 0.85
 anchor_bottom = 0.9
+offset_left = 12.0
+offset_top = 20.0
+offset_right = 8.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 30
 
 [node name="Panel" type="Panel" parent="Locations/GameWindow/Cards/ConfirmPanel" unique_id=687786255]
 layout_mode = 2
@@ -597,6 +602,8 @@ anchor_left = 0.25
 anchor_top = 0.18
 anchor_right = 0.85
 anchor_bottom = 0.75
+offset_top = 16.0
+offset_right = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 20
@@ -607,7 +614,7 @@ columns = 2
 custom_minimum_size = Vector2(570, 210)
 propagate_maximum_size = true
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 6
 mouse_behavior_recursive = 2
 
@@ -615,28 +622,28 @@ mouse_behavior_recursive = 2
 custom_minimum_size = Vector2(570, 210)
 propagate_maximum_size = true
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="ChoiceButton3" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=1236537601 instance=ExtResource("7_0tnpc")]
 custom_minimum_size = Vector2(570, 210)
 propagate_maximum_size = true
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="ChoiceButton4" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=1321643466 instance=ExtResource("7_0tnpc")]
 custom_minimum_size = Vector2(570, 210)
 propagate_maximum_size = true
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="ChoiceButton5" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=1996661042 instance=ExtResource("7_0tnpc")]
 custom_minimum_size = Vector2(570, 210)
 propagate_maximum_size = true
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="ChoiceButton6" parent="Locations/GameWindow/Cards/ChoiceMenu" unique_id=584236680 instance=ExtResource("7_0tnpc")]
@@ -874,9 +881,168 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("7_vtaks")
 
+[node name="SecondaryStats" type="VBoxContainer" parent="Locations/GameWindow" unique_id=1918644107]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.86
+anchor_top = 0.16
+anchor_right = 1.0
+anchor_bottom = 0.9
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Panel" type="Panel" parent="Locations/GameWindow/SecondaryStats" unique_id=636746845]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_gee14")
+
+[node name="Icon" type="TextureRect" parent="Locations/GameWindow/SecondaryStats/Panel" unique_id=1011284594]
+custom_maximum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.5
+anchor_right = 0.25
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("7_vtaks")
+
+[node name="Label" type="Label" parent="Locations/GameWindow/SecondaryStats/Panel" unique_id=1972973435]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 32
+text = "Lvl: 0"
+
+[node name="Panel2" type="Panel" parent="Locations/GameWindow/SecondaryStats" unique_id=1628720554]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_gee14")
+
+[node name="Icon" type="TextureRect" parent="Locations/GameWindow/SecondaryStats/Panel2" unique_id=110116272]
+custom_maximum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.5
+anchor_right = 0.25
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("7_vtaks")
+
+[node name="Label" type="Label" parent="Locations/GameWindow/SecondaryStats/Panel2" unique_id=2008161083]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 32
+text = "Lvl: 0"
+
+[node name="Panel3" type="Panel" parent="Locations/GameWindow/SecondaryStats" unique_id=145772463]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_gee14")
+
+[node name="Icon" type="TextureRect" parent="Locations/GameWindow/SecondaryStats/Panel3" unique_id=693887002]
+custom_maximum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.5
+anchor_right = 0.25
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("7_vtaks")
+
+[node name="Label" type="Label" parent="Locations/GameWindow/SecondaryStats/Panel3" unique_id=337807630]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 32
+text = "Lvl: 0"
+
+[node name="Panel4" type="Panel" parent="Locations/GameWindow/SecondaryStats" unique_id=932468204]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_gee14")
+
+[node name="Icon" type="TextureRect" parent="Locations/GameWindow/SecondaryStats/Panel4" unique_id=1389908100]
+custom_maximum_size = Vector2(90, 90)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.5
+anchor_right = 0.25
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("7_vtaks")
+
+[node name="Label" type="Label" parent="Locations/GameWindow/SecondaryStats/Panel4" unique_id=694985250]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 32
+text = "Lvl: 0"
+
 [node name="Settings" parent="Locations/GameWindow" unique_id=353667311 instance=ExtResource("7_u5sy4")]
 visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Locations/StartMenu/StartButton" to="Locations/StartMenu/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="Locations/GameWindow/Cards/ConfirmPanel/ConfirmButton" to="Locations/GameWindow/Cards" method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="Locations/GameWindow/DownMenu/Settings" to="Locations/GameWindow/DownMenu/Settings" method="_on_pressed"]

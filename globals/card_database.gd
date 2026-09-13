@@ -67,8 +67,8 @@ const cards_data = {
 	},
 }
 
-func get_card(id: String) -> Dictionary:
-	return cards_data.get(id, {})
+func get_card(card: String) -> Dictionary:
+	return cards_data.get(card, {})
 
-func get_all_ids() -> Array[String]:
+func get_all_cards() -> Array[String]:
 	return cards_data.keys()
