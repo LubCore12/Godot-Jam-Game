@@ -23,6 +23,7 @@ Button/styles/normal = SubResource("StyleBoxFlat_eifbw")
 Button/styles/pressed = SubResource("StyleBoxFlat_lkqxx")
 
 [node name="ChoiceButton" type="Button" unique_id=928214690]
+custom_minimum_size = Vector2(570, 210)
 anchors_preset = -1
 anchor_right = 0.3
 anchor_bottom = 0.2
@@ -89,11 +90,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 offset_left = 20.0
-offset_top = 15.0
+offset_top = 8.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 theme_override_fonts/font = ExtResource("1_0i16n")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 38
 text = "Yummy!"
 
 [node name="Description" type="Label" parent="Info/InfoPanel" unique_id=972428045]
@@ -103,13 +104,13 @@ anchor_top = 0.35
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
-offset_top = 10.0
+offset_top = 5.0
 offset_right = -20.0
 offset_bottom = -10.0
 theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 theme_override_fonts/font = ExtResource("1_0i16n")
 theme_override_font_sizes/font_size = 24
-text = "You found a rat! Finally, some meat."
+text = "You found and ate a rat"
 autowrap_mode = 2
 
 [node name="Info" type="Label" parent="Info/InfoPanel" unique_id=787219334]
@@ -118,6 +119,7 @@ anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 11.0
 offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 2
@@ -126,6 +128,24 @@ theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
 theme_override_fonts/font = ExtResource("1_0i16n")
 theme_override_font_sizes/font_size = 18
 text = "+10 Food, -5 Health"
+horizontal_alignment = 2
+autowrap_mode = 3
+
+[node name="SecondaryInfo" type="Label" parent="Info/InfoPanel" unique_id=914583732]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 0.85
+offset_left = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("1_0i16n")
+theme_override_font_sizes/font_size = 18
+text = "+1 Strength"
 horizontal_alignment = 2
 
 [node name="Icon" type="Control" parent="." unique_id=1629275718]

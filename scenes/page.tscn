@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://b1303yb4sx428"]
+
+[ext_resource type="Texture2D" uid="uid://do0aff82tjfug" path="res://icon.svg" id="1_1g3qv"]
+[ext_resource type="Script" uid="uid://cb7q4xb26cpo4" path="res://scenes/scripts/page.gd" id="1_6ni5k"]
+[ext_resource type="FontFile" uid="uid://cwisd6dpf2uhm" path="res://fonts/Undead Pixel 8.ttf" id="2_6ni5k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44wib"]
+bg_color = Color(0.7529412, 0.80784315, 0.7882353, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uf4ts"]
+bg_color = Color(0.87058824, 0.6862745, 0.28627452, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_5g3ik"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_44wib")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_uf4ts")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1j6l"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pl11u"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhx41"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnb83"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_tecwl"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("2_6ni5k")
+Button/styles/focus = SubResource("StyleBoxFlat_e1j6l")
+Button/styles/hover = SubResource("StyleBoxFlat_pl11u")
+Button/styles/normal = SubResource("StyleBoxFlat_bhx41")
+Button/styles/pressed = SubResource("StyleBoxFlat_qnb83")
+
+[node name="Page" type="Control" unique_id=204348722]
+layout_mode = 3
+anchor_right = 0.35
+anchor_bottom = 0.7
+offset_right = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ni5k")
+
+[node name="BG" type="Panel" parent="." unique_id=774652827]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1252876787]
+custom_minimum_size = Vector2(200, 275)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 50.0
+texture = ExtResource("1_1g3qv")
+
+[node name="Name" type="Label" parent="." unique_id=1615503336]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.1
+anchor_right = 0.45
+anchor_bottom = 0.1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6ni5k")
+theme_override_font_sizes/font_size = 60
+text = "Dolbayeb"
+
+[node name="Info" type="Label" parent="." unique_id=1236937033]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6ni5k")
+theme_override_font_sizes/font_size = 32
+text = "Yo, you can talk to him trh
+r rth 
+rt 
+r 
+rth"
+autowrap_mode = 2
+
+[node name="TrustContainer" type="VBoxContainer" parent="." unique_id=1752790354]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.25
+anchor_right = 0.9
+anchor_bottom = 0.4
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="TrustLabel" type="Label" parent="TrustContainer" unique_id=1992023956]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6ni5k")
+theme_override_font_sizes/font_size = 48
+text = "Trust:"
+
+[node name="TrustBar" type="ProgressBar" parent="TrustContainer" unique_id=865441695]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = SubResource("Theme_5g3ik")
+theme_override_colors/font_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+
+[node name="Label" type="Label" parent="TrustContainer/TrustBar" unique_id=2118834040]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.43137255, 0.6156863, 0.6117647, 1)
+theme_override_fonts/font = ExtResource("2_6ni5k")
+theme_override_font_sizes/font_size = 20
+text = "0/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TalkButton" type="Button" parent="." unique_id=81914244]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_tecwl")
+text = "Talk"

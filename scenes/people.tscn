@@ -1,5 +1,51 @@
 [gd_scene format=3 uid="uid://du8hfy8afbc6c"]
 
+[ext_resource type="Texture2D" uid="uid://do0aff82tjfug" path="res://icon.svg" id="1_3yal1"]
+[ext_resource type="Script" uid="uid://7mavkgpuunjh" path="res://scenes/scripts/people.gd" id="1_meydw"]
+[ext_resource type="FontFile" uid="uid://cwisd6dpf2uhm" path="res://fonts/Undead Pixel 8.ttf" id="2_44wib"]
+[ext_resource type="PackedScene" uid="uid://b1303yb4sx428" path="res://scenes/page.tscn" id="2_wo3e1"]
+[ext_resource type="Script" uid="uid://cthyhfdq35nim" path="res://scenes/scripts/people_exit_button.gd" id="3_uf4ts"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suyxu"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgl2t"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljb1"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_uf4ts"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("2_44wib")
+Button/styles/focus = SubResource("StyleBoxFlat_suyxu")
+Button/styles/hover = SubResource("StyleBoxFlat_sgl2t")
+Button/styles/normal = SubResource("StyleBoxFlat_qouja")
+Button/styles/pressed = SubResource("StyleBoxFlat_wljb1")
+
 [node name="People" type="Control" unique_id=1388830971]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +53,67 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_meydw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1239516202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17254902, 0.23921569, 0.2901961, 1)
+
+[node name="Book" type="HBoxContainer" parent="." unique_id=1890485558]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.15
+anchor_right = 0.85
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 80
+
+[node name="LeftPage" parent="Book" unique_id=204348722 instance=ExtResource("2_wo3e1")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightPage" parent="Book" unique_id=1805851863 instance=ExtResource("2_wo3e1")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PeopleExitButton" type="Button" parent="." unique_id=1005493909]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.9
+anchor_right = 0.6
+anchor_bottom = 1.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_uf4ts")
+text = "CLOSE"
+script = ExtResource("3_uf4ts")
+
+[node name="PrevButton" type="TextureButton" parent="." unique_id=1318654832]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 100.0
+offset_top = 100.0
+texture_normal = ExtResource("1_3yal1")
+
+[node name="NextButton" type="TextureButton" parent="." unique_id=1585238744]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 100.0
+offset_right = -100.0
+grow_horizontal = 0
+texture_normal = ExtResource("1_3yal1")
+
+[connection signal="pressed" from="PeopleExitButton" to="PeopleExitButton" method="_on_pressed"]
+[connection signal="pressed" from="PrevButton" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

@@ -1,10 +1,11 @@
 extends Button
 
-@onready var info_bg = $Info/BG1
-@onready var icon_bg = $Icon/BG1
-@onready var title = $Info/InfoPanel/Title
-@onready var description = $Info/InfoPanel/Description
-@onready var card_icon = $Icon/CardIcon
+@onready var info_bg := $Info/BG1
+@onready var icon_bg := $Icon/BG1
+@onready var title := $Info/InfoPanel/Title
+@onready var description := $Info/InfoPanel/Description
+@onready var info := $Info/InfoPanel/Info
+@onready var card_icon := $Icon/CardIcon
 
 signal card_clicked(card_id: String)
 
@@ -22,8 +23,14 @@ func animate_bg(info_color, icon_color) -> void:
 
 func setup(id: String, data: Dictionary) -> void:
 	card_id = id
-	title.text = data.get("title", "abc")
-	description.text = data.get("description", "abc")
+	title.text = data["title"]
+	description.text = data["description"]
+	
+	var parts = []
+	for stat in data["effects"]:
+		parts.append(str(stat) + ": " + str(data["effects"][stat]))
+	
+	info.text = ", ".join(parts)
 	
 	if data.has("icon"):
 		card_icon.texture = load(data["icon"])

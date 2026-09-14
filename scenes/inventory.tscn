@@ -1,5 +1,80 @@
 [gd_scene format=3 uid="uid://uvdedopk1iud"]
 
+[ext_resource type="FontFile" uid="uid://cwisd6dpf2uhm" path="res://fonts/Undead Pixel 8.ttf" id="1_hj2ta"]
+[ext_resource type="Texture2D" uid="uid://do0aff82tjfug" path="res://icon.svg" id="2_ty45s"]
+[ext_resource type="Script" uid="uid://bktuxk2fif6rf" path="res://scenes/scripts/inventory_exit_button.gd" id="3_ty45s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suyxu"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgl2t"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qouja"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wljb1"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_ty45s"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_hj2ta")
+Button/styles/focus = SubResource("StyleBoxFlat_suyxu")
+Button/styles/hover = SubResource("StyleBoxFlat_sgl2t")
+Button/styles/normal = SubResource("StyleBoxFlat_qouja")
+Button/styles/pressed = SubResource("StyleBoxFlat_wljb1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s887n"]
+bg_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.1764706, 0.28235295, 0.29411766, 1)
+
+[sub_resource type="Theme" id="Theme_yyk2a"]
+Panel/styles/panel = SubResource("StyleBoxFlat_s887n")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt5mj"]
+bg_color = Color(0.638588, 0.73231137, 0.76382935, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssvqc"]
+bg_color = Color(0.49128562, 0.6209408, 0.69346863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
+bg_color = Color(0.3843775, 0.48037082, 0.5119803, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rysoc"]
+draw_center = false
+border_width_top = 20
+border_color = Color(0.1271773, 0.18891162, 0.21013868, 1)
+
+[sub_resource type="Theme" id="Theme_53g1v"]
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_bt5mj")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ssvqc")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_trtic")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_rysoc")
+
 [node name="Inventory" type="Control" unique_id=1736176996]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +82,88 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=46177278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17254902, 0.23921569, 0.2901961, 1)
+
+[node name="InventoryExitButton" type="Button" parent="." unique_id=282465844]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.85
+anchor_right = 0.6
+anchor_bottom = 0.95
+offset_top = -8.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ty45s")
+text = "CLOSE"
+script = ExtResource("3_ty45s")
+
+[node name="Panel" type="Panel" parent="." unique_id=567385520]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yyk2a")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=1027676274]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 40.0
+offset_right = -10.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_53g1v")
+scroll_horizontal = 30
+
+[node name="GridContainer" type="HBoxContainer" parent="Panel/ScrollContainer" unique_id=1615749824]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/ScrollContainer/GridContainer" unique_id=775284257]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ty45s")
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/ScrollContainer/GridContainer" unique_id=987487010]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ty45s")
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/ScrollContainer/GridContainer" unique_id=1583696050]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ty45s")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScrollContainer/GridContainer" unique_id=487109650]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ty45s")
+
+[connection signal="pressed" from="InventoryExitButton" to="InventoryExitButton" method="_on_pressed"]

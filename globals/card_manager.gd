@@ -5,7 +5,7 @@ signal selection_changed(selected_card: String)
 signal selection_confirmed(selected_card: String)
 
 var offered_cards: Array[String] = []
-var selected_card: String
+var selected_card := ""
 
 func offer_cards(count: int = 6) -> void:
 	offered_cards.clear()
