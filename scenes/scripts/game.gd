@@ -5,13 +5,14 @@ extends Node2D
 @onready var inventory_menu := $Locations/GameWindow/Inventory
 @onready var people_menu := $Locations/GameWindow/People
 @onready var globals_menu := $Locations/GameWindow/Globals
+@onready var dialog_menu := $Locations/GameWindow/Dialog
 @onready var health_bar := $Locations/GameWindow/StateStats/HealthStat/ProgressBar
 @onready var food_bar := $Locations/GameWindow/StateStats/FoodStat/ProgressBar
 @onready var sanity_bar := $Locations/GameWindow/StateStats/SanityStat/ProgressBar
 @onready var alertness_bar := $Locations/GameWindow/StateStats/AlertnessStat/ProgressBar
 @onready var strength_label := $Locations/GameWindow/SecondaryStats/Strength/StrengthLabel
 @onready var stealth_label := $Locations/GameWindow/SecondaryStats/Stealth/StealthLabel
-@onready var dexternity_label := $Locations/GameWindow/SecondaryStats/Dexternity/DexternityLabel
+@onready var dexterity_label := $Locations/GameWindow/SecondaryStats/Dexternity/DexternityLabel
 @onready var speed_label := $Locations/GameWindow/SecondaryStats/Speed/SpeedLabel
 @onready var day := $Locations/GameWindow/InfoSidePanel/VBoxContainer/DayPanel/Day
 @onready var day_time := $Locations/GameWindow/InfoSidePanel/VBoxContainer/DayTimePanel/DayTime
@@ -31,11 +32,12 @@ func _ready() -> void:
 	GameState.start_game.connect(start_game)
 	GameState.continue_game.connect(continue_game)
 	GameState.stats_changed.connect(stats_changed)
+	GameState.play_dialog.connect(play_dialog)
+	GameState.close_dialog.connect(close_dialog)
+	GameState.play_final.connect(play_final)
 	
 	CardManager.offer_cards(6)
 	CardManager.selection_confirmed.connect(selection_confirmed)
-	
-	stats_changed()
 	
 func start_game() -> void:
 	var tween = create_tween()
@@ -45,6 +47,17 @@ func continue_game() -> void:
 	SaveManager.load_game()
 	var tween = create_tween()
 	tween.tween_property(camera, "offset:x", 1920, 0.5)
+	stats_changed()
+
+func play_final(final: String) -> void:
+	print(final)
+
+func play_dialog(dialog: String) -> void:
+	dialog_menu.show()
+	dialog_menu.setup(dialog)
+
+func close_dialog() -> void:
+	dialog_menu.hide()
 
 func open_settings() -> void:
 	settings_menu.show()
@@ -117,7 +130,7 @@ func stats_changed() -> void:
 	
 	strength_label.text = "Lvl: " + str(GameState.stats["strength"])
 	stealth_label.text = "Lvl: " + str(GameState.stats["stealth"])
-	dexternity_label.text = "Lvl: " + str(GameState.stats["dexternity"])
+	dexterity_label.text = "Lvl: " + str(GameState.stats["dexterity"])
 	speed_label.text = "Lvl: " + str(GameState.stats["speed"])
 	
 	SaveManager.save_game()

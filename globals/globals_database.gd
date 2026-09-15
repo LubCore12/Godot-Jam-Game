@@ -8,7 +8,7 @@ const globals_data = {
 		"unlocked": false,
 		"completed": false,
 		"requirements": {
-			"trust": {
+			"stats": {
 				"old_man": 60,
 				"rat": 40
 			}
@@ -23,7 +23,7 @@ const globals_data = {
 		"unlocked": false,
 		"completed": false,
 		"requirements": {
-			"trust": {
+			"stats": {
 				"gray": 70
 			}
 		},

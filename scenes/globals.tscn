@@ -158,3 +158,4 @@ theme = SubResource("Theme_wu3ti")
 text = "CONFIRM"
 
 [connection signal="pressed" from="GlobalsButtons/CloseGlobalsButton" to="GlobalsButtons/CloseGlobalsButton" method="_on_pressed"]
+[connection signal="pressed" from="GlobalsButtons/GlobalsConfirmButton" to="." method="_on_globals_confirm_button_pressed"]

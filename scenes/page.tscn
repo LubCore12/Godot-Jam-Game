@@ -175,3 +175,5 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_tecwl")
 text = "Talk"
+
+[connection signal="pressed" from="TalkButton" to="." method="_on_talk_button_pressed"]

@@ -15,6 +15,9 @@ signal exit_globals
 signal stats_changed
 signal phase_changed
 signal day_changed
+signal play_dialog
+signal close_dialog
+signal play_final(final: String)
 signal game_over(reason: String)
 
 enum Phase { MORNING, AFTERNOON, EVENING }
@@ -29,11 +32,11 @@ var stats := {
 	"sanity": 100.0,
 	"alertness": 100.0,
 	"strength": 0,
-	"dexternity": 0,
+	"dexterity": 0,
 	"stealth": 0,
 	"speed": 0,
-	"old_man": 0,
-	"rat": 0,
+	"old_man": 100,
+	"rat": 100,
 	"gray": 0
 }
 

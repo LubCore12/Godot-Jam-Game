@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://hqxntsadjl6q"]
+
+[ext_resource type="FontFile" uid="uid://cwisd6dpf2uhm" path="res://fonts/Undead Pixel 8.ttf" id="1_drp0p"]
+
+[sub_resource type="FontVariation" id="FontVariation_gtjiv"]
+base_font = ExtResource("1_drp0p")
+spacing_top = 4
+spacing_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drp0p"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxihb"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vd3ad"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7iki"]
+bg_color = Color(0.44313726, 0.53333336, 0.5686275, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30980393, 0.41568628, 0.45882353, 1)
+
+[sub_resource type="Theme" id="Theme_4dj0v"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = SubResource("FontVariation_gtjiv")
+Button/styles/focus = SubResource("StyleBoxFlat_drp0p")
+Button/styles/hover = SubResource("StyleBoxFlat_lxihb")
+Button/styles/normal = SubResource("StyleBoxFlat_vd3ad")
+Button/styles/pressed = SubResource("StyleBoxFlat_i7iki")
+
+[node name="DialogButton" type="Button" unique_id=2124363399]
+custom_minimum_size = Vector2(526, 247)
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_4dj0v")
+theme_override_font_sizes/font_size = 40
+text = "Hey, howdy, my buddy?"
+autowrap_mode = 2

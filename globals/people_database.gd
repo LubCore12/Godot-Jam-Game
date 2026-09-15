@@ -17,5 +17,6 @@ const people_data = {
 		"title": "Глава 3",
 		#"icon": preload("res://icons/page2.png"),
 		"info": "Ыыыыыыыы...",
+		"id": "gray"
 	},
 }
